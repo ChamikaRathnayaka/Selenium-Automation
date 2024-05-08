@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 public class CartPageTest extends BaseTest {
     @Test
-    public void navigateToCart() throws InterruptedException {
+    public void navigateToCart() {
         ProductsPage pp = new ProductsPage(driver);
         pp.AddToCart();
         pp.cartIcon();

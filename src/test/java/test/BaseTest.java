@@ -23,7 +23,7 @@ public class BaseTest {
     }
 
     @Test(priority = 0)
-    public void LoginTest(){
+    public void LoginTest()  {
         LoginPage gpo = new LoginPage(driver);
         gpo.TextInUserName("standard_user");
         gpo.CodeInPassword("secret_sauce");

@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 
 public class ProductsPage {
@@ -15,7 +16,7 @@ public class ProductsPage {
 
     By addToCart_button = By.id("add-to-cart-sauce-labs-backpack");
     By removeCart_button = By.id("remove-sauce-labs-backpack");
-    By cart_icon = By.xpath("//body/div[@id='root']/div[@id='page_wrapper']/div[@id='contents_wrapper']/div[@id='header_container']/div[1]/div[3]/a[1]");
+    By cart_icon = By.id("shopping_cart_container");
     By product_title = By.id("item_4_title_link");
 
     public ProductsPage(WebDriver driver){
@@ -28,6 +29,7 @@ public class ProductsPage {
     }
 
     public void AddToCart(){
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.findElement(addToCart_button).sendKeys(Keys.RETURN);
     }
 
