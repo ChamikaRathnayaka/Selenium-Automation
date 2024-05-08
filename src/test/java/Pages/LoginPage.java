@@ -15,7 +15,6 @@ public class LoginPage {
     public LoginPage(WebDriver driver) {
         this.driver = driver;
     }
-
     public void TextInUserName(String text){
         driver.findElement(user_name).sendKeys(text);
     }

@@ -3,19 +3,15 @@ package Pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.util.concurrent.TimeUnit;
 
 public class CheckoutPage {
  WebDriver driver;
- WebDriverWait wait;
 
  By f_name = By.id("first-name");
  By l_name = By.id("last-name");
  By zip_code = By.id("postal-code");
  By continue_button= By.id("continue");
-
 
 
  public  CheckoutPage(WebDriver driver){
@@ -36,8 +32,5 @@ public class CheckoutPage {
  public void continueButton(){
   driver.findElement(continue_button).sendKeys(Keys.RETURN);
  }
-
-
-
 
 }
