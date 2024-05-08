@@ -1,9 +1,9 @@
 package test;
 import Pages.LoginPage;
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
 public class LoginPageTest extends BaseTest {
-
 
     @Test
     public  void LoginTest(){

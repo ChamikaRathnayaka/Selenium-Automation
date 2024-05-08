@@ -13,5 +13,8 @@ public class CartPageTest extends BaseTest {
         pp.cartIcon();
         CartPage cartpage = new CartPage(driver);
         Assert.assertTrue(cartpage.isCartPageLoaded());
+        String expected = "https://www.saucedemo.com/cart.html";
+        String actual = driver.getCurrentUrl();
+        Assert.assertEquals(actual,expected);
     }
 }

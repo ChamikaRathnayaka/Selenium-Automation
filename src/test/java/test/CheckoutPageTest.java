@@ -3,6 +3,7 @@ package test;
 import Pages.CartPage;
 import Pages.CheckoutPage;
 import Pages.ProductsPage;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class CheckoutPageTest extends BaseTest{
@@ -13,6 +14,9 @@ public class CheckoutPageTest extends BaseTest{
         pp.cartIcon();
         CartPage cartpage = new CartPage(driver);
         cartpage.checkoutbutton_click();
+        String expected = "https://www.saucedemo.com/checkout-step-one.html";
+        String actual = driver.getCurrentUrl();
+        Assert.assertEquals(actual,expected);
     }
 
     @Test(priority = 1)
