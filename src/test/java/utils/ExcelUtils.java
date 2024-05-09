@@ -12,23 +12,22 @@ public class ExcelUtils {
         workbook = new XSSFWorkbook(excelPath);
         sheet = workbook.getSheet(sheetName);
     }
-
-    public static void main(String[] args) throws IOException {
-//        getRowCount("Sheet1");
-//        getCellDataNumber(1,1);
-//        getCellDataString(0,0);
-
-    }
-
-    public static void getRowCount(String sheetName) throws IOException {
-        workbook.getSheet(sheetName);
-        int row_count = sheet.getPhysicalNumberOfRows();
+    public static int getRowCount() throws IOException {
+        int row_count = 0;
+        row_count = sheet.getPhysicalNumberOfRows();
         System.out.println("No of Rows :" + row_count);
+        return row_count;
     }
-
-    public static void getCellDataString(int rowNum, int colNum){
-        String cellData= sheet.getRow(rowNum).getCell(colNum).getStringCellValue();
-        System.out.println(cellData);
+    public static int getColCount() throws IOException {
+        int col_count = 0;
+        col_count = sheet.getPhysicalNumberOfRows();
+        System.out.println("No of Colums :" + col_count);
+        return col_count;
+    }
+    public static String getCellDataString(int rowNum, int colNum){
+        String cellData= null;
+        cellData= sheet.getRow(rowNum).getCell(colNum).getStringCellValue();
+        return cellData;
     }
     public static void getCellDataNumber(int rowNum, int colNum){
         double cellData= sheet.getRow(rowNum).getCell(colNum).getNumericCellValue();
