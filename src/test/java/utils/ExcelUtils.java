@@ -20,12 +20,12 @@ public class ExcelUtils {
     }
     public static int getColCount() throws IOException {
         int col_count = 0;
-        col_count = sheet.getPhysicalNumberOfRows();
+        col_count = sheet.getRow(0).getPhysicalNumberOfCells();
         System.out.println("No of Colums :" + col_count);
         return col_count;
     }
     public static String getCellDataString(int rowNum, int colNum){
-        String cellData= null;
+        String cellData = null;
         cellData= sheet.getRow(rowNum).getCell(colNum).getStringCellValue();
         return cellData;
     }
